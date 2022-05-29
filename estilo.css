@@ -93,6 +93,10 @@ body{
     color: #ffffff;
     margin-right: 5px;
 }
+
+
+
+
 .container{
     max-width: 1400px;
     margin: 0 auto;
@@ -288,6 +292,12 @@ form{
 
 
 @media(max-width:900px){
+    
+    .menu-menu{
+        right: 15px;
+        top: 50px;
+    }
+    
     .bars__menu{
     margin-right: -20px;
      margin-top: -20px;
@@ -296,6 +306,7 @@ form{
         font-size: 30px;
         text-align: center;
         margin-left: 0;
+        margin-top: 50px;
     }
    .cuadro{
        flex-direction: column;
