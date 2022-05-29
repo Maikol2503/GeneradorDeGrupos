@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="estilo.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600&display=swap');
+        </style>
+	<title>Generador de grupos</title>
+
+    <style>
+        
+    
+    </style>
+</head>
+<body>
+    
+<header>
+    <!-- barra de menu animado -->
+    <div class="bars__menu">
+        <span class="line1__bars-menu"></span>
+        <span class="line2__bars-menu"></span>
+        <span class="line3__bars-menu"></span>
+    </div>
+    <!-- menu  -->
+    <nav>
+        <div class="menu-menu">
+             <a target="_blank" href="https://maikol2503.github.io/formulariojavascrip/"><p class="item-menu"><ion-icon  class="icon-bar" name="folder-open-outline"></ion-icon>Formulario de resgistro</p></a>
+             <a target="_blank" href="https://maikol2503.github.io/calculadora/"><p class="item-menu"><ion-icon class="icon-bar2" name="calculator-outline"></ion-icon>calculadora</p></a>
+        </div>
+    </nav>
+</header>
+    <section>
+        <div class="container">
+            <h1 id="titulo">Generador de grupos aleatorios</h1>
+                <div class="cuadro">
+                        <div class="cuadroformulario">
+                            <div class="formulario">
+                                <p id="p2">Al final de cada nombre debe colocar una coma <span style="font-size:18px; color: red;">(,)</span></p>
+                                <form action="">
+                                <textarea id="texto" placeholder="Nombre,"></textarea>
+                                <div class="reset">
+                                <p id="rangoP">Numero de perdonas por grupo</p>
+                                <button id="reset">Reset</button>
+                                </div>
+                                </form>
+                                <div class="cajarango">
+                                    <div class="rango">
+                                        <input type="range" min="1" max="30" id="numero" value="1">
+                                        <p id="rangovalor">1</p>
+                                    </div>
+                                     <button id="boton" onclick="boton()">Crear grupos</button>
+                                </div>
+                            </div>   
+                        </div>
+                        <div id="resultadO">
+          
+                        </div>
+                </div>  
+        </div>  
+    </section>
+    <footer class="footer">
+        <div class="container">
+            <div class="cuadro-footer">
+               <h1>Como hacer grupos aleatorios</h1>
+               <p>Esta herramienta para hacer grupos al azar es muy fácil de usar. Solo debes escribir los nombres de las personas u objetos que quieras agrupar y el generador de grupos aleatorios hará el resto. Además, si no estás satisfecho con el resultado inicial, puedes seguir clicando el botón de hacer grupos aleatorios y te dará diferentes opciones</p>
+            </div>
+        </div>
+    </footer>
+    
+    
+    
+    <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+<script src="js.js"></script>
+</body>
+</html>
