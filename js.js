@@ -1,5 +1,4 @@
 
-
 //animacion de la barra de menu
 document.querySelector(".bars__menu").addEventListener("click", animateBars );
 let line1__bars = document.querySelector(".line1__bars-menu");
@@ -29,8 +28,8 @@ let rango = document.getElementById("numero");
        function boton()  {
            
            const tam = parseInt(document.getElementById("numero").value);
-		  texto = document.getElementById("texto").value;
-        const numeros  = texto.split("\n");
+		   texto = document.getElementById("texto").value;
+           const numeros  = texto.split("\n");
 
          //1 creo una fucion que me elija solo una palbara y lo elimine a la misma ves pra que no se repitan...
 
@@ -73,20 +72,27 @@ let rango = document.getElementById("numero");
 
     if(numeros != ""){   //aqui se valida que el textarea no este vacio 
         
-        let ultimap = array[array.length-1];
+        let ultimaPosicion = array[array.length-1];// con el -1 llego a la ultima posicion
         let resultado = document.getElementById("resultadO");
         resultado.innerHTML = "";
 
-        //
-      if((ultimap.length) <= (tam / 2)){ 
+        ///////////////////
+      if((ultimaPosicion.length) <= (tam / 2)){ 
         array.pop();
         for(i=0;i<array.length;i++){
-            array[i].push(ultimap[i]);                        
+            array[i].push(ultimaPosicion[i]);                        
         let datoparrafo = document.createElement("p");
         datoparrafo.innerHTML = "<h3>Grupo</h3> " +"<h3>"+(i+1)+"</h3>" +"<br>"+ "" + array[i].join("<br>");
         resultado.appendChild(datoparrafo);    
         }
     }
+
+
+
+
+
+
+
       else if(array.length % tam >= tam % 2)
     {
         for(i=0;i<array.length;i++){                        
@@ -98,5 +104,5 @@ let rango = document.getElementById("numero");
     }
   }
 
-}     
+}        
 
