@@ -1,4 +1,5 @@
 
+
 //animacion de la barra de menu
 document.querySelector(".bars__menu").addEventListener("click", animateBars );
 let line1__bars = document.querySelector(".line1__bars-menu");
@@ -18,11 +19,6 @@ botonBar.addEventListener("click" , () => {
 })
 
 
-
-
-
-
-
 let rango = document.getElementById("numero");
         let rangoValor = document.getElementById("rangovalor");
         rango.oninput=()=>{
@@ -34,7 +30,10 @@ let rango = document.getElementById("numero");
            
            const tam = parseInt(document.getElementById("numero").value);
 		  texto = document.getElementById("texto").value;
-          const numeros  = texto.split(",");
+        const numeros  = texto.split("\n");
+
+         //1 creo una fucion que me elija solo una palbara y lo elimine a la misma ves pra que no se repitan...
+
           function obtenerNumero(coleccion){
               if(coleccion.length > 0){
                   //Primero obtenemos un índice aleatorio dentro de los posibles que haya en el array
@@ -44,7 +43,8 @@ let rango = document.getElementById("numero");
                   return numero;
                 }
             }
-            
+
+       //2 creo una funcion que reciba una coleccion
            
 		function obtenerColeccion(){
 			//Generamos un saco nuevo lleno de números del que buscaremos los números para la colección
@@ -59,23 +59,44 @@ let rango = document.getElementById("numero");
 			//Se devuelve el lote
 			return lote;
 		}
+
+
         let obtenerColec = obtenerColeccion();
        //dividimoa la coleccion en grupos de array
+
           let array=[];
            for( i=0; i < obtenerColec.length; i+=tam){
            a = obtenerColec.slice(i,i+tam);
            array.push(a);
-        }
+        }  
+
+
     if(numeros != ""){   //aqui se valida que el textarea no este vacio 
+        
+        let ultimap = array[array.length-1];
         let resultado = document.getElementById("resultadO");
-        resultado.innerHTML = ""
+        resultado.innerHTML = "";
+
+        //
+      if((ultimap.length) <= (tam / 2)){ 
+        array.pop();
+        for(i=0;i<array.length;i++){
+            array[i].push(ultimap[i]);                        
+        let datoparrafo = document.createElement("p");
+        datoparrafo.innerHTML = "<h3>Grupo</h3> " +"<h3>"+(i+1)+"</h3>" +"<br>"+ "" + array[i].join("<br>");
+        resultado.appendChild(datoparrafo);    
+        }
+    }
+      else if(array.length % tam >= tam % 2)
+    {
         for(i=0;i<array.length;i++){                        
         let datoparrafo = document.createElement("p");
         datoparrafo.innerHTML = "<h3>Grupo</h3> " +"<h3>"+(i+1)+"</h3>" +"<br>"+ "" + array[i].join("<br>");
-        resultado.appendChild(datoparrafo);    }
-    } 
- 
-
-
+        resultado.appendChild(datoparrafo);   
+    
+    }   
+    }
+  }
 
 }     
+
