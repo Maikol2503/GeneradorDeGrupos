@@ -250,6 +250,10 @@ h3{
 }
 form{
     width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
 }
 #reset{
     float: right;
